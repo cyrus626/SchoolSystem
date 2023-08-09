@@ -1,0 +1,54 @@
+﻿<Window x:Class="SchoolSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolSystem"
+        mc:Ignorable="d"
+        Title="School System" Height="450" Width="800" FontSize="16">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <UniformGrid Grid.Row="0">
+            <Menu>
+                <MenuItem  Header="File">
+                    <MenuItem Name="PupReg" Click="PupReg_Click"
+                              Header="_Register Pupils"/>
+                    <MenuItem Header="_Login to class"/>
+                    <Separator/>
+                    <MenuItem Header="Exit" Click="MenuItem_Click_1"/>
+                </MenuItem>
+                <MenuItem Header="Login">
+                    <MenuItem Click="MenuItem_Click" Header="Principal login" Name="AdminLogin"/>
+                    <MenuItem Click="MenuItem_Click" Header="Teacher's login" Name="StaffLogin"/>
+                    <MenuItem Click="MenuItem_Click" Header="Accountant login" Name="StaffLogin1"/>
+                    <MenuItem Click="MenuItem_Click" Header="Visitor login" Name="VisitorLogin"/> 
+                </MenuItem>
+                <MenuItem Header="Help">
+                    <MenuItem Header="_Send Feedback"/> 
+                </MenuItem>
+            </Menu>
+        </UniformGrid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"></Grid>
+            <StackPanel Grid.Column="1" Name="Body">
+                <TextBlock FontSize="18" HorizontalAlignment="Center">Registered Student Records</TextBlock>
+                <ListBox Name="PupilRecord">
+                    <!--<ListBoxItem >
+                        <TextBlock Name="ListBoxcontent"></TextBlock>
+                    </ListBoxItem>-->
+                </ListBox>
+            </StackPanel>
+            <Grid Grid.Column="2"></Grid>
+        </Grid>
+        <Grid Grid.Row="2"></Grid>
+    </Grid>
+</Window>
